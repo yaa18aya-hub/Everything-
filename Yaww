@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hello My Love 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.top-video {
+  width: 260px;
+  max-width: 80%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.hello {
+  font-size: 2rem;
+  color: #222;
+  margin: 0;
+}
+
+.love {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #d94a5a;
+  margin: 5px 0 10px;
+}
+
+.question {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+button {
+  background: white;
+  border: 2px solid #d94a5a;
+  color: #222;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#yesBtn {
+  font-weight: 600;
+}
+
+#lovePage {
+  display: none;
+}
+
+.letter {
+  max-width: 500px;
+  margin: auto;
+}
+
+.letter h1 {
+  font-family: 'Pacifico', cursive;
+  color: #d94a5a;
+  font-size: 2.2rem;
+}
+
+.letter p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="container" id="questionPage">
+
+  <video class="top-video" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <h1 class="hello">Hello</h1>
+  <h2 class="love">My love!</h2>
+
+  <p class="question">Do you want to be my Valentine? 💕</p>
+
+  <button id="yesBtn">YES PLEASE </button>
+  <button id="noBtn">NO THANKS </button>
+
+</div>
+
+<!-- PAGE 2 -->
+<div class="container" id="lovePage">
+
+  <!-- MUSIC (plays after click) -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="letter">
+    <h1>For You 💌</h1>
+
+    <!-- ✨ WRITE YOUR LETTER HERE ✨ -->
+    <p>
+       N7IBEK barcha barchhha ya rou7i 
+      ou na3rif il kilma hethi 9oltha barcha marat 
+      ama misech n2akid ou n9oulha barcha 
+      bich 7atta nhar mayjik chak fi inek inti 
+      akthir 7aja 7abitha ou bich dima n7ibha ou 
+      na3cha9ha ou nista7fith 3leha 
+      ou nchla maykounich hetha e5ir "Valentine "
+      wala 2ay événement m3a b3athan
+      N7IBEK barcha barchhha ya rou7i
+    </p>
+
+    <p>
+      Happy Valentine’s Day ❤️
+    </p>
+    <!-- ✨ END LETTER ✨ -->
+
+  </div>
+</div>
+
+<script>
+let yesBtn = document.getElementById("yesBtn");
+let noBtn = document.getElementById("noBtn");
+let music = document.getElementById("bgMusic");
+let size = 1;
+
+noBtn.addEventListener("click", () => {
+  size += 0.3;
+  yesBtn.style.transform = `scale(${size})`;
+});
+
+yesBtn.addEventListener("click", () => {
+  document.getElementById("questionPage").style.display = "none";
+  document.getElementById("lovePage").style.display = "block";
+  music.play();
+});
+</script>
+
+</body>
+</html>
